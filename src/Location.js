@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { getDataByZipCode } from './Data'
+import { getDataByZipCodeAndCountry } from './Data'
 
 const getTemp = (data) => {
     if(data.main) {
@@ -27,7 +27,7 @@ const getHumidity = (data) => {
 const Location = (props) => {
     const [response, setResponse] = useState({})
     useEffect(() => {
-        getDataByZipCode(props.location.zipCode, setResponse)
+        getDataByZipCodeAndCountry(props.location.zipCode, props.country, setResponse)
     }, [])
     const handleDelete = () => {
         props.removeLocation(props.index)
