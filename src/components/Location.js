@@ -98,7 +98,7 @@ const Location = (props) => {
                     <p>{props.location.city}, {props.location.state}, {props.location.country}</p> :
                     <div></div>
             }
-            <img src={getIcon(response)} />
+            <img src={getIcon(response)} alt='Current weather' />
             <p>{getTemp(response)} °F, feels like {getFeelsLikeTemp(response)} °F</p>
             <p>Wind: {getWind(response)}, Humidity: {getHumidity(response)}% </p>
             <p>Current Conditions: {getCurrentConditions(response)}</p>

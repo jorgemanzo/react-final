@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Home from './pages/Home'
 import Main from './pages/Main'
 import Settings from './pages/Settings'
