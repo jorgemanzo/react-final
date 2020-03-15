@@ -4,6 +4,7 @@ import sun from '../images/sun.svg'
 import cloud from '../images/cloud.svg'
 import snowSnow from '../images/cloud-snow.svg'
 import rain from '../images/cloud-rain.svg'
+import '../styles/Location.css'
 const getTemp = (data) => {
     if(data.main) {
         return Math.floor( ( ( data.main.temp - 273.15) * 1.8 ) + 32 )
@@ -86,22 +87,25 @@ const Location = (props) => {
         props.removeLocation(props.index)
     }
     return (
-        <div>
-            <button onClick={handleDelete}>X</button>
-            {
-                props.location.zipCode ?
-                    <p>Zip: {props.location.zipCode}, {props.location.country}</p> :
-                    <div></div>
-            }
-            {
-                props.location.city ?
-                    <p>{props.location.city}, {props.location.state}, {props.location.country}</p> :
-                    <div></div>
-            }
-            <img src={getIcon(response)} alt='Current weather' />
-            <p>{getTemp(response)} °F, feels like {getFeelsLikeTemp(response)} °F</p>
-            <p>Wind: {getWind(response)}, Humidity: {getHumidity(response)}% </p>
-            <p>Current Conditions: {getCurrentConditions(response)}</p>
+        <div className="location" onClick={handleDelete}>
+            <div className="title">
+                {
+                    props.location.zipCode ?
+                        <div>Zip: {props.location.zipCode}, {props.location.country}</div> :
+                        <div></div>
+                }
+                {
+                    props.location.city ?
+                        <div>{props.location.city}, {props.location.state}, {props.location.country}</div> :
+                        <div></div>
+                }
+            </div>
+            <div className="content">
+                <img src={getIcon(response)} alt='Current weather' />
+                <p>{getTemp(response)} °F, feels like {getFeelsLikeTemp(response)} °F</p>
+                <p>Wind: {getWind(response)}, Humidity: {getHumidity(response)}% </p>
+                <p>Current Conditions: {getCurrentConditions(response)}</p>
+            </div>
         </div>
     )
 }

@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import Location from '../components/Location'
 import Zip from '../components/Zip'
 import City from '../components/City'
+import '../styles/Main.css'
 
 const checkForUrlParams = (params, props) => {
   if(!params.zipCode) {
@@ -81,7 +82,7 @@ const Main = (props) => {
           /> :
           <div></div>
       }
-      <div>
+      <div className="locationsContainer">
         {
           props.locations.length > 0 ?
             props.locations.map((loc, index) => (

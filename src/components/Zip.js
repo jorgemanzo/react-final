@@ -1,5 +1,6 @@
 import React from 'react'
 import { countries } from '../api/Data'
+import '../styles/Zip.css'
 
 const Zip = (props) => {
     const handleSubmit = (event) => {
@@ -24,16 +25,21 @@ const Zip = (props) => {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <label>
-                    Add by Zip Code and country:
-                    <input type="text" value={props.zipCode} onChange={handleChange} />
-                </label>
-                <select value={props.country} onChange={handleCountriesSelectChange}>
-                    {countries.map((country, index) => (
-                        <Choices key={index} value={country.value} label={country.label} />
-                    ))}
-                </select>
-                <input type="submit" value="Submit" />
+                <div>
+                    <select className="select" value={props.country} onChange={handleCountriesSelectChange}>
+                        {countries.map((country, index) => (
+                            <Choices key={index} value={country.value} label={country.label} />
+                        ))}
+                    </select>
+                    <br/>
+                    <div>
+                        <label>
+                            ZipCode &nbsp;
+                            <input className="zip" type="text" value={props.zipCode} onChange={handleChange} />
+                        </label>
+                        <input className="button" type="submit" value="Submit" />
+                    </div>
+                </div>
             </form>
         </div>
     )
