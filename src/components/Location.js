@@ -61,18 +61,27 @@ const getHumidity = (data) => {
         return '...'
     }
 }
+const getData = (props, setResponse) => {
+    console.log(props.location)
+    if (props.location.zipCode) {
+        getDataByZipCodeAndCountry(props.location.zipCode, props.location.country, setResponse)
+    } else if (props.location.city) {
+        getDataByCityAndCountryAndState(props.location.city, props.location.state, props.location.country, setResponse)
+    } else {
+        console.log('none')
+    }
+}
 const Location = (props) => {
     const [response, setResponse] = useState({})
     useEffect(() => {
-        console.log(props.location)
-        if(props.location.zipCode){
-            getDataByZipCodeAndCountry(props.location.zipCode, props.location.country, setResponse)
-        } else if(props.location.city){
-            getDataByCityAndCountryAndState(props.location.city, props.location.state, props.location.country, setResponse)
-        } else {
-            console.log('none')
-        }
+        getData(props, setResponse)
     }, [props.location])
+    useEffect(() => {
+        if (props.allowRefresh) {
+            const timer = setInterval(() => getData(props, setResponse), 60000)
+            return () => clearInterval(timer)
+        }
+    }, [])
     const handleDelete = () => {
         props.removeLocation(props.index)
     }
@@ -81,13 +90,13 @@ const Location = (props) => {
             <button onClick={handleDelete}>X</button>
             {
                 props.location.zipCode ?
-                <p>Zip: {props.location.zipCode}, {props.location.country}</p> :
-                <div></div>
+                    <p>Zip: {props.location.zipCode}, {props.location.country}</p> :
+                    <div></div>
             }
             {
                 props.location.city ?
-                <p>{props.location.city}, {props.location.state}, {props.location.country}</p> :
-                <div></div>
+                    <p>{props.location.city}, {props.location.state}, {props.location.country}</p> :
+                    <div></div>
             }
             <img src={getIcon(response)} />
             <p>{getTemp(response)} °F, feels like {getFeelsLikeTemp(response)} °F</p>

@@ -85,7 +85,7 @@ const Main = (props) => {
         {
           props.locations.length > 0 ?
             props.locations.map((loc, index) => (
-              <Location key={index} index={index} location={loc} removeLocation={removeLocation} />
+              <Location key={index} index={index} allowRefresh={props.allowRefresh} location={loc} removeLocation={removeLocation} />
             )) :
             <div></div>
         }
