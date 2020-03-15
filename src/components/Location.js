@@ -8,7 +8,20 @@ const getTemp = (data) => {
         return '...'
     }
 }
-
+const getFeelsLikeTemp = (data) => {
+    if(data.main) {
+        return Math.floor( ( ( data.main.feels_like - 273.15) * 1.8 ) + 32 )
+    } else {
+        return '...'
+    }
+}
+const getCurrentConditions = (data) => {
+    if(data.weather && data.weather[0] && data.weather[0].description) { 
+        return data.weather[0].description
+    } else {
+        return '...'
+    }
+}
 const getWind = (data) => {
     if(data.main) {
         return data.wind.speed
@@ -44,11 +57,17 @@ const Location = (props) => {
             <button onClick={handleDelete}>X</button>
             {
                 props.location.zipCode ?
-                <p>Zip: {props.location.zipCode}</p> :
+                <p>Zip: {props.location.zipCode}, {props.location.country}</p> :
                 <div></div>
             }
-            <p>{getTemp(response)} F</p>
+            {
+                props.location.city ?
+                <p>{props.location.city}, {props.location.state}, {props.location.country}</p> :
+                <div></div>
+            }
+            <p>{getTemp(response)} F, feels like {getFeelsLikeTemp(response)}</p>
             <p>Wind: {getWind(response)}, Humidity: {getHumidity(response)}% </p>
+            <p>Current Conditions: {getCurrentConditions(response)}</p>
         </div>
     )
 }
