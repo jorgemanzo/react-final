@@ -1,9 +1,39 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import Location from './Location'
 import Zip from './components/Zip'
 import City from './components/City'
 
+const checkForUrlParams = (params, props) => {
+  if(!params.zipCode) {
+    return
+  }
+  console.log(params)
+  let shouldAdd = false
+  for (let i = 0; i < props.locations.length; i++) {
+    console.log('compare')
+    console.log(props.locations[i].zipCode)
+    console.log(params.zipCode)
+    console.log(props.locations[i].zipCode === params.zipCode)
+    if(props.locations[i].zipCode === params.zipCode) {
+      shouldAdd = false
+    }
+  }
+  if (props.locations.length === 0) {
+    shouldAdd = true
+  }
+  console.log("should add?:", shouldAdd)
+  if (shouldAdd) {
+    const newLocations = [...props.locations]
+    newLocations.unshift({ zipCode: params.zipCode, country: params.country })
+    props.setLocations(newLocations)
+  }
+}
+
 const Main = (props) => {
+  const params = useParams()
+  checkForUrlParams(params, props)
+
   const [view, setView] = useState(1)
   const [zipCode, setZipCode] = useState('97361')
   const [city, setCity] = useState('Monmouth')
@@ -39,7 +69,7 @@ const Main = (props) => {
       }
       {
         view === 2 ?
-        <City 
+          <City
             city={city}
             setCity={setCity}
             province={province}
@@ -48,8 +78,8 @@ const Main = (props) => {
             setCountry={setCountry}
             locations={props.locations}
             setLocations={props.setLocations}
-        /> :
-        <div></div>
+          /> :
+          <div></div>
       }
       <div>
         {

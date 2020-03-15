@@ -7,7 +7,6 @@ import {
   Switch,
   Route,
   Redirect,
-  useParams,
   Link,
   NavLink
 } from 'react-router-dom'
@@ -35,11 +34,14 @@ const App = () => {
         <Route exact path='/'>
           <Redirect to='/home' />
         </Route>
+        <Route path='/main/addZip/:zipCode/:country'>
+          <Main setLocations={setLocations} locations={locations} />
+        </Route>
         <Route path='/home'>
           <Home />
         </Route>
         <Route path='/main'>
-          <Main setLocations={setLocations} locations={locations}/>
+          <Main setLocations={setLocations} locations={locations} />
         </Route>
       </Switch>
     </div>
