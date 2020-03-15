@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Home from './pages/Home'
 import Main from './pages/Main'
-import logo from './logo.svg';
 import './styles/App.css';
 import {
   Switch,

@@ -2,8 +2,8 @@ export const countries = [
     { value:'us', label:'🇺🇲️ USA' },
     { value:'ca', label:'️🇨🇦️ CA' },
 ]
-// const apiToken = `d82c23c84605675bfb22f0195f73574a`
-const apiToken = `aldskjf;dsaljf`
+const apiToken = `d82c23c84605675bfb22f0195f73574a`
+// const apiToken = `aldskjf;dsaljf`
 export const getDataByZipCodeAndCountry = async (zipCode, country, setData) => {
     console.log('API CALL  ==============')
     console.log('by zip:', zipCode)
