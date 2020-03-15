@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
-import Home from './Home'
-import Main from './Main'
+import Home from './pages/Home'
+import Main from './pages/Main'
 import logo from './logo.svg';
-import './App.css';
+import './styles/App.css';
 import {
   Switch,
   Route,

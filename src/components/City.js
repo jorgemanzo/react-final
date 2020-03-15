@@ -1,5 +1,5 @@
 import React from 'react'
-import { countries } from '../Data'
+import { countries } from '../api/Data'
 const City = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault()

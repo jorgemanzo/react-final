@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import Location from './Location'
-import Zip from './components/Zip'
-import City from './components/City'
+import Location from '../components/Location'
+import Zip from '../components/Zip'
+import City from '../components/City'
 
 const checkForUrlParams = (params, props) => {
   if(!params.zipCode) {

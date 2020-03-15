@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { getDataByZipCodeAndCountry, getDataByCityAndCountryAndState } from './Data'
+import { getDataByZipCodeAndCountry, getDataByCityAndCountryAndState } from '../api/Data'
 
 const getTemp = (data) => {
     if(data.main) {

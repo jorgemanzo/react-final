@@ -1,5 +1,5 @@
 import React from 'react'
-import { countries } from '../Data'
+import { countries } from '../api/Data'
 
 const Zip = (props) => {
     const handleSubmit = (event) => {
