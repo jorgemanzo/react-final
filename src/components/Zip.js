@@ -33,10 +33,11 @@ const Zip = (props) => {
                     </select>
                     <br/>
                     <div>
-                        <label>
+                        <label className="zipInput" >
                             ZipCode &nbsp;
                             <input className="zip" type="text" value={props.zipCode} onChange={handleChange} />
                         </label>
+                        <br />
                         <input className="button" type="submit" value="Submit" />
                     </div>
                 </div>

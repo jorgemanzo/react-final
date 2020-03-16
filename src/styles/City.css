@@ -12,35 +12,30 @@
     color: dodgerblue;
     cursor: pointer;
 }
-
+.box {
+    font-size: large;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    border: 10px solid black;
+    width: 50vw;
+    height: 40vh;
+}
 .select {
     margin-bottom: 2vh;
 }
-
-.zip {
+.cityForm {
+    padding-top: 7vh;
+    padding-left: 2vh;
+    padding-right: 2vh;
+}
+.input {
     border-top: none;
     border-left: none;
     border-right: none;
     border-bottom: 2px solid black;
     padding: 2px;
 }
-
-.zip:hover {
+.input:hover {
     color: dodgerblue;
     border-bottom: 2px solid dodgerblue;
-}
-
-.zipContent {
-    font-size: large;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-    border: 10px solid black;
-    width: 50vw;
-    height: 30vh;
-}
-
-.zipForm {
-    padding-top: 7vh;
-    padding-left: 2vh;
-    padding-right: 2vh;
 }
