@@ -23,8 +23,8 @@ const Zip = (props) => {
     }
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
+        <div className="zipContent">
+            <form className="zipForm" onSubmit={handleSubmit}>
                 <div>
                     <select className="select" value={props.country} onChange={handleCountriesSelectChange}>
                         {countries.map((country, index) => (

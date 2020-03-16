@@ -3,3 +3,26 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+
+.forms {
+    display: flex;
+    justify-content: center;
+}
+
+.buttons {
+    border: 2px solid black;
+    font-size: large;
+    margin: 5px;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.buttons:hover {
+    border: 2px solid white;
+    background-color: black;
+    font-size: large;
+    color: white;
+    margin: 5px;
+    padding: 5px;
+    text-decoration: none;
+}

@@ -54,34 +54,36 @@ const Main = (props) => {
   console.log(props.locations)
   return (
     <div>
-      <button onClick={showZipView}>ZipCode, Country</button>
-      <button onClick={showCityView}>City, State, Country</button>
-      {
-        view === 1 ?
-          <Zip
-            country={country}
-            setCountry={setCountry}
-            zipCode={zipCode}
-            setZipCode={setZipCode}
-            locations={props.locations}
-            setLocations={props.setLocations}
-          /> :
-          <div></div>
-      }
-      {
-        view === 2 ?
-          <City
-            city={city}
-            setCity={setCity}
-            province={province}
-            setProvince={setProvince}
-            country={country}
-            setCountry={setCountry}
-            locations={props.locations}
-            setLocations={props.setLocations}
-          /> :
-          <div></div>
-      }
+      <button className="buttons" onClick={showZipView}>ZipCode, Country</button>
+      <button className="buttons" onClick={showCityView}>City, State, Country</button>
+      <div className="forms">
+        {
+          view === 1 ?
+            <Zip
+              country={country}
+              setCountry={setCountry}
+              zipCode={zipCode}
+              setZipCode={setZipCode}
+              locations={props.locations}
+              setLocations={props.setLocations}
+            /> :
+            <div></div>
+        }
+        {
+          view === 2 ?
+            <City
+              city={city}
+              setCity={setCity}
+              province={province}
+              setProvince={setProvince}
+              country={country}
+              setCountry={setCountry}
+              locations={props.locations}
+              setLocations={props.setLocations}
+            /> :
+            <div></div>
+        }
+      </div>
       <div className="locationsContainer">
         {
           props.locations.length > 0 ?

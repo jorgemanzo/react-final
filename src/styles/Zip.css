@@ -3,6 +3,24 @@
     background-color: white;
 }
 .zip {
-    border: 2px solid black;
-    background-color: white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid black;
+    padding: 2px;
+}
+
+.zipContent {
+    font-size: large;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    border: 10px solid black;
+    width: 60vw;
+    height: 30vh;
+}
+
+.zipForm {
+    padding-top: 9vh;
+    padding-left: 2vh;
+    padding-right: 2vh;
 }
