@@ -84,10 +84,15 @@ const Location = (props) => {
         }
     }, [])
     const handleDelete = () => {
-        props.removeLocation(props.index)
+        if(props.removing) {
+            props.removeLocation(props.index)
+        }
+    }
+    const locationStyle = () => {
+        return props.removing ? 'removingLocation' : 'location'
     }
     return (
-        <div className="location" onClick={handleDelete}>
+        <div className={locationStyle()} onClick={handleDelete}>
             <div className="title">
                 {
                     props.location.zipCode ?
