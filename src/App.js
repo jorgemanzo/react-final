@@ -2,12 +2,12 @@ import React, { useState } from 'react'
 import Home from './pages/Home'
 import Main from './pages/Main'
 import Settings from './pages/Settings'
+import NavBar from './components/NavBar'
 import './styles/App.css';
 import {
   Switch,
   Route,
-  Redirect,
-  NavLink
+  Redirect
 } from 'react-router-dom'
 
 const App = () => {
@@ -15,34 +15,12 @@ const App = () => {
   const [locations, setLocations] = useState([])
   const [allowRefresh, setAllowRefresh] = useState(false)
 
-  const links = [
-    {to: '/', label: 'Home'},
-    {to: '/main', label: 'My Locations'},
-    {to: '/settings', label: 'Settings'},
-  ]
 
-  const Link = (props) => {
-    return (
-      <li className="link">
-          <NavLink exact to={props.to}>
-            {props.label}
-          </NavLink>
-      </li>
-    )
-  }
   console.log(locations)
   return (
     <div className="App">
-      <p>stuuuuuuuuuuf</p>
-      <div className="navContainer">
-        <ul className='navbar'>
-          {
-            links.map((lin, index) => ( 
-              <Link key={index}  to={lin.to} label={lin.label} />
-            ))
-          }
-        </ul>
-      </div>
+      <NavBar />
+
       <Switch>
         <Route exact path='/'>
           <Redirect to='/home' />

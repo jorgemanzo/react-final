@@ -2,38 +2,3 @@
   text-align: center;
   outline: 0;
 }
-.navContainer {
-  display: flex;
-  justify-content: center;
-  outline: 0;
-}
-
-.navbar {
-  list-style-type: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  font-size: 3vh;
-  border-bottom: 10px solid black;;
-  outline: 0;
-}
-
-.link a {
-  display: inline;
-  text-decoration: none;
-  margin-left: 1vw;
-  margin-right: 1vw;
-  outline: 0;
-}
-
-a:visited {
-  text-decoration: none;
-  color: black;
-  outline: 0;
-}
-
-a:hover {
-  text-decoration: none;
-  color: dodgerblue;
-  outline: 0;
-}

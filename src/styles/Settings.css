@@ -1,13 +1,13 @@
 .clearButton {
     margin-top: 50px;
-    border: 2px solid Red;
-    color: Red;
+    border: 2px solid tomato;
+    color: tomato;
     font-size: 20pt;
     background-color: white;
 }
 .clearButton:hover {
     margin-top: 50px;
-    border: 2px solid white;
+    border: 2px solid tomato;
     color: white;
     font-size: 20pt;
     background-color: tomato;
