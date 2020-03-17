@@ -4,6 +4,7 @@
     border-radius: 5px;
     margin: 20px;
     box-shadow: 0px 0px 15px 10px #ccc;
+    outline: 0;
 }
 
 .location:hover {
@@ -12,6 +13,7 @@
     border-radius: 5px;
     margin: 20px;
     box-shadow: 0px 0px 15px 10px tomato;
+    outline: 0;
 }
 .title {
     background-color: black;
@@ -20,8 +22,10 @@
     padding: 10px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+    outline: 0;
 }
 
 .content {
     margin: 10px;
+    outline: 0;
 }

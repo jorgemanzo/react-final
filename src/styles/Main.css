@@ -2,11 +2,13 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    outline: 0;
 }
 
 .forms {
     display: flex;
     justify-content: center;
+    outline: 0;
 }
 
 .buttons {
@@ -15,6 +17,8 @@
     margin: 5px;
     padding: 5px;
     text-decoration: none;
+    background-color: white;
+    outline: 0;
 }
 
 .buttons:hover {
@@ -25,4 +29,6 @@
     margin: 5px;
     padding: 5px;
     text-decoration: none;
+    outline: 0;
+    cursor: pointer;
 }

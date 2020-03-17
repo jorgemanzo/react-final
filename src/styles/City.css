@@ -3,6 +3,7 @@
     border: none;
     font-size: large;
     margin-top: 3vh;
+    outline: 0;
 }
 
 .button:hover {
@@ -11,22 +12,28 @@
     font-size: large;
     color: dodgerblue;
     cursor: pointer;
+    outline: 0;
 }
+
 .box {
     font-size: large;
     margin-top: 5vh;
     margin-bottom: 5vh;
     border: 10px solid black;
     width: 50vw;
-    height: 40vh;
+    height: 45vh;
+    outline: 0;
 }
+
 .select {
     margin-bottom: 2vh;
+    outline: 0;
 }
 .cityForm {
     padding-top: 7vh;
     padding-left: 2vh;
     padding-right: 2vh;
+    outline: 0;
 }
 .input {
     border-top: none;
@@ -34,8 +41,10 @@
     border-right: none;
     border-bottom: 2px solid black;
     padding: 2px;
+    outline: 0;
 }
 .input:hover {
     color: dodgerblue;
     border-bottom: 2px solid dodgerblue;
+    outline: 0;
 }

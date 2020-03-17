@@ -14,26 +14,34 @@ const App = () => {
   // const [response, setResponse] = useState({})
   const [locations, setLocations] = useState([])
   const [allowRefresh, setAllowRefresh] = useState(false)
+
+  const links = [
+    {to: '/', label: 'Home'},
+    {to: '/main', label: 'My Locations'},
+    {to: '/settings', label: 'Settings'},
+  ]
+
+  const Link = (props) => {
+    return (
+      <li className="link">
+          <NavLink exact to={props.to}>
+            {props.label}
+          </NavLink>
+      </li>
+    )
+  }
   console.log(locations)
   return (
     <div className="App">
       <p>stuuuuuuuuuuf</p>
-      <div className='navbar'>
-        <li>
-          <NavLink exact to='/'>
-            Home
-          </NavLink>
-        </li>
-        <li>
-          <NavLink exact to='/main'>
-            My Locations
-          </NavLink>
-        </li>
-        <li>
-          <NavLink exact to='/settings'>
-            Settings
-          </NavLink>
-        </li>
+      <div className="navContainer">
+        <ul className='navbar'>
+          {
+            links.map((lin, index) => ( 
+              <Link key={index}  to={lin.to} label={lin.label} />
+            ))
+          }
+        </ul>
       </div>
       <Switch>
         <Route exact path='/'>

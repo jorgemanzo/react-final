@@ -1,0 +1,19 @@
+.clearButton {
+    margin-top: 50px;
+    border: 2px solid Red;
+    color: Red;
+    font-size: 20pt;
+    background-color: white;
+}
+.clearButton:hover {
+    margin-top: 50px;
+    border: 2px solid white;
+    color: white;
+    font-size: 20pt;
+    background-color: tomato;
+    cursor: pointer;
+}
+
+.auto {
+    font-size: 20px;
+}
