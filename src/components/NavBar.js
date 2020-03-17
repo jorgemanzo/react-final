@@ -5,11 +5,13 @@ import '../styles/NavBar.css'
 import home from '../images/home.svg'
 import location from '../images/map-pin.svg'
 import settings from '../images/settings.svg'
+import info from '../images/info.svg'
 const NavBar = () => {
     const linksData = [
         { to: '/', label: 'Home', svg: home },
         { to: '/main', label: 'My Locations', svg: location },
         { to: '/settings', label: 'Settings', svg: settings },
+        { to: '/about', label: 'About', svg: info },
     ]
 
     const Link = (props) => {

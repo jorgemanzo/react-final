@@ -3,6 +3,7 @@ import Home from './pages/Home'
 import Main from './pages/Main'
 import Settings from './pages/Settings'
 import NavBar from './components/NavBar'
+import About from './pages/About'
 import './styles/App.css';
 import {
   Switch,
@@ -27,7 +28,13 @@ const App = () => {
           <Redirect to='/home' />
         </Route>
         <Route path='/main/addZip/:zipCode/:country'>
-          <Main setLocations={setLocations} locations={locations} />
+          <Main 
+          setLocations={setLocations} 
+          locations={locations} 
+          allowRefresh={allowRefresh}
+          removing={removing}
+          setRemoving={setRemoving}
+          />
         </Route>
         <Route path='/home'>
           <Home />
@@ -43,6 +50,9 @@ const App = () => {
         </Route>
         <Route path='/settings'>
           <Settings setLocations={setLocations} allowRefresh={allowRefresh} setAllowRefresh={setAllowRefresh}/>
+        </Route>
+        <Route path='/About' >
+          <About />
         </Route>
       </Switch>
     </div>

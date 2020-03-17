@@ -6,7 +6,7 @@ import City from '../components/City'
 import Remove from '../components/Remove'
 import '../styles/Main.css'
 
-const checkForUrlParams = (params, props) => {
+const checkForUrlParams = (params, props, removed) => {
   if(!params.zipCode) {
     return
   }
@@ -24,6 +24,9 @@ const checkForUrlParams = (params, props) => {
   if (props.locations.length === 0) {
     shouldAdd = true
   }
+  if (removed) { 
+    shouldAdd = false
+  }
   console.log("should add?:", shouldAdd)
   if (shouldAdd) {
     const newLocations = [...props.locations]
@@ -34,14 +37,15 @@ const checkForUrlParams = (params, props) => {
 
 const Main = (props) => {
   const params = useParams()
-  checkForUrlParams(params, props)
-
+  const [removed, setRemoved] = useState(false)
+  checkForUrlParams(params, props, removed)
   const [view, setView] = useState(1)
   const [zipCode, setZipCode] = useState('97361')
   const [city, setCity] = useState('Monmouth')
   const [province, setProvince] = useState('Oregon')
   const [country, setCountry] = useState('US')
   const removeLocation = (childIndex) => {
+    setRemoved(true)
     const newLocations = props.locations.filter((_, index) => index !== childIndex)
     props.setLocations(newLocations)
   }

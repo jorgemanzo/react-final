@@ -76,13 +76,13 @@ const Location = (props) => {
     const [response, setResponse] = useState({})
     useEffect(() => {
         getData(props, setResponse)
-    }, [props.location])
+    }, [props])
     useEffect(() => {
         if (props.allowRefresh) {
             const timer = setInterval(() => getData(props, setResponse), 60000)
             return () => clearInterval(timer)
         }
-    }, [])
+    }, [props])
     const handleDelete = () => {
         if(props.removing) {
             props.removeLocation(props.index)
