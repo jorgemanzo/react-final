@@ -1,6 +1,6 @@
 export const countries = [
-    { value:'us', label:'🇺🇲️ USA' },
-    { value:'ca', label:'️🇨🇦️ CA' },
+    { value:'US', label:'🇺🇲️ US' },
+    { value:'CA', label:'️🇨🇦️ CA' },
 ]
 const apiToken = `d82c23c84605675bfb22f0195f73574a`
 // const apiToken = `aldskjf;dsaljf`

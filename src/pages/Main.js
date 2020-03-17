@@ -39,7 +39,7 @@ const Main = (props) => {
   const [zipCode, setZipCode] = useState('97361')
   const [city, setCity] = useState('Monmouth')
   const [province, setProvince] = useState('Oregon')
-  const [country, setCountry] = useState('us')
+  const [country, setCountry] = useState('US')
   const removeLocation = (childIndex) => {
     const newLocations = props.locations.filter((_, index) => index !== childIndex)
     props.setLocations(newLocations)
