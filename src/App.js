@@ -14,6 +14,7 @@ const App = () => {
   // const [response, setResponse] = useState({})
   const [locations, setLocations] = useState([])
   const [allowRefresh, setAllowRefresh] = useState(false)
+  const [removing, setRemoving] = useState(false)
 
 
   console.log(locations)
@@ -36,6 +37,8 @@ const App = () => {
           setLocations={setLocations} 
           locations={locations} 
           allowRefresh={allowRefresh}
+          removing={removing}
+          setRemoving={setRemoving}
           />
         </Route>
         <Route path='/settings'>

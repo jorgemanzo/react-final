@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import Location from '../components/Location'
 import Zip from '../components/Zip'
 import City from '../components/City'
+import Remove from '../components/Remove'
 import '../styles/Main.css'
 
 const checkForUrlParams = (params, props) => {
@@ -84,6 +85,7 @@ const Main = (props) => {
             <div></div>
         }
       </div>
+      <Remove removing={props.removing} setRemoving={props.setRemoving}/>
       <div className="locationsContainer">
         {
           props.locations.length > 0 ?

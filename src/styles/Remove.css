@@ -1,0 +1,17 @@
+.removingButton {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border: 2px solid tomato;
+    color: tomato;
+    font-size: 20pt;
+    background-color: white;
+}
+
+.removingButton:hover {
+    margin-top: 50px;
+    border: 2px solid tomato;
+    color: white;
+    font-size: 20pt;
+    background-color: tomato;
+    cursor: pointer;
+}
