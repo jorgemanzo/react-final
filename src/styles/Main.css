@@ -22,7 +22,7 @@
 }
 
 .buttons:hover {
-    border: 2px solid white;
+    border: 2px solid black;
     background-color: black;
     font-size: large;
     color: white;
